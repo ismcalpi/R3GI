@@ -1,8 +1,6 @@
-from lib import pokedex
-import logging
+from lib import pokedex as dex
 
-log = logging.getLogger("my-logger")
+opponent = dex.Pokemon('vileplume')
+ally = dex.Pokemon('dragonite', None, ["dragonclaw", "firepunch", "fly", "earthquake"])
 
-opponent = pokedex.Pokemon('dragonite')
-ally = pokedex.Pokemon('dragonite', moveset=["dragonclaw", "firepunch", "fly", "earthquake"])
-
+print(f"Ally {ally.name} deals the most damage to {opponent.name} with {ally.get_best_move(opponent).name} which deals {ally.get_best_move(opponent).damage(opponent)} damage")
